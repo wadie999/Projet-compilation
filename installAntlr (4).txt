@@ -1,0 +1,22 @@
+INSTRUCTIONS Pour l'INSTALLATION de ANTLR
+
+- créer un répertoire bin dans votre répertoire home
+- y copier le .jar antlr-4.9.2-complete.jar
+- dans votre fichier de configuration du terminal (.bashrc ou .profile ou .zshrc) ajouter les lignes suivantes :
+
+export CLASSPATH=.:~/bin/antlr-4.9.2-complete.jar:$CLASSPATH
+
+alias antlr4='java -Xmx500M -cp "~/bin/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+alias grun='java -Xmx500M -cp "~/bin/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
+
+
+
+UTILISATIONS d'ANTLR (la plus basique)
+
+$ antlr4 Fic.g4
+$ javac Fic*.java
+
+On exécute ensuite le fichier contenant le main (après l'avoir compilé bien entendu) ou on utilise grun. 
+
+
+

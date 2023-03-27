@@ -1,0 +1,34 @@
+INSTRUCTIONS Pour l'INSTALLATION du simulateur de la machine MVaP
+
+- téléchargez le fichier sources-MVaP-2.1.zip et dézippez-le
+
+- se placer dans le répertoire sources-MVaP-2.1 et lancer les commandes suivantes (je suppose que le prompt du shell c'est $):
+  $ antlr4 MVaP.g4
+  $ javac *.java 
+
+- Modifier le fichier META-INF/MANIFEST.MF pour mettre le chemin complet de antlr et ensuite exécuter la commande suivante.
+
+$ jar cfm MVaP.jar META-INF/MANIFEST.MF *.class
+
+
+- Modifier la variable CLASSPATH pour indiquer où vous avez placé le fichier MVaP.jar (comme vous aviez fait avec antlr)
+
+
+
+
+UTILISATIONS de l'éditeur de lien et du simulateur MVaP :
+
+- pour assembler un code source  C.mvap (ne contient que des instructions MVaP)
+
+$ java -cp $CLASSPATH MVaPAssembler C.mvap
+
+(il va créer un fichier C.mvap.cbap, qui est le code exécutable)
+
+- pour l'exécuter (en supposant que MVaP.jar se trouve dans $HOME/bin/)
+
+$ java -jar $HOME/bin/MVaP.jar C.mvap.cbap
+
+(ou java -jar $HOME/bin/MVaP.jar -d C.mvap.cbap pour le mode debug)
+
+
+
